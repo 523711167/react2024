@@ -12,7 +12,8 @@ class Index extends Component {
      * @param nextState 下一个即将被应用到组件的状态（state）。
      * @param nextContext 下一个即将被应用到组件的上下文（context）。 todo 我发现this.state和nextState一样的 react18
      * @returns {boolean} 判断 React 组件的输出是否受当前 state 或 props 更改的影响。默认行为是 state 每次发生变化组件都会重新渲染。大部分情况下，你应该遵循默认行为。
-     *                    请注意，返回 false 并不会阻止子组件在 state 更改时重新渲染。 todo 我发现父组件更新，传递新的props给子组件，父组件返回false，子组件不更新 react18
+     *                    请注意，返回 false 并不会阻止子组件在 state 更改时重新渲染。
+     *                    notes 我发现父组件更新，传递新的props给子组件，父组件返回false，子组件不更新,因为父组件render导致子组件render react18
      */
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         console.log('第一步执行  shouldComponentUpdate(nextProps, nextState, nextContext)');

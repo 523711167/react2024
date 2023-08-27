@@ -13,6 +13,13 @@ class Index extends Component {
         return null
     }
 
+    /**
+     *
+     * @param nextProps
+     * @param nextState
+     * @param nextContext
+     * @returns {boolean}
+     */
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         console.log("第二步  shouldComponentUpdate(nextProps, nextState, nextContext)");
         return true;

@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-class Home extends Component {
+class Header extends Component {
     render() {
         return (
             <div>
-                Home
+                欢迎来到Route5
             </div>
         );
     }
 }
 
-export default Home;
+export default Header;

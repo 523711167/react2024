@@ -12,7 +12,7 @@ class Home extends Component {
                 <div>
                     <div>
                         <NavLink to="/home/new" >new</NavLink>
-                        <NavLink to="/home/todo">todo</NavLink>
+                        <NavLink to="/home/todo">todo1</NavLink>
                     </div>
                     <div>
                         <Switch>

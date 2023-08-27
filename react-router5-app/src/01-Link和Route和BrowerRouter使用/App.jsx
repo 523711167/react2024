@@ -1,4 +1,4 @@
-import {Link, Route} from "react-router-dom";
+import {Link, NavLink, Route} from "react-router-dom";
 
 
 import About from "./pages/About";
@@ -21,10 +21,8 @@ function App() {
           <div className="row my-2" >
               <div className="col-3" style={{border: '1px solid red'}}>
                   <div className="d-flex flex-column">
-                      <Link to="/about" >About</Link>
-                      <Link to="/home" >Home</Link>
-
-
+                      <NavLink to="/about" >About</NavLink>
+                      <NavLink to="/home" >Home</NavLink>
                   </div>
               </div>
               <div className="col-9" style={{border: '1px solid red'}}>
