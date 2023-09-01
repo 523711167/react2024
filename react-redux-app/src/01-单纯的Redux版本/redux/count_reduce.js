@@ -1,6 +1,4 @@
 export default function countReduce(preState=0, action) {
-    console.log('preState =', preState)
-    console.log('action =', action)
     let { type, data } = action;
     switch (type) {
         case 'add':

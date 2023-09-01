@@ -26,4 +26,6 @@ count: countReducer,
 person: personReducer
 }), composeWithDevTools(applyMiddleware(thunk)))
 
+### `yarn add react-redux`
 
+react整合redux包
