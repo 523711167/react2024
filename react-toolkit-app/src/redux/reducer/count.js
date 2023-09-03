@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    count: 1
+    count: 2
 }
 
 const countSlice = createSlice({
@@ -9,7 +9,6 @@ const countSlice = createSlice({
     initialState,
     reducers: {
         countAdd(state, action) {
-            console.log('countAdd(state, action) =', state, action)
             let { type, payload } = action;
             state.count = state.count + payload
         },

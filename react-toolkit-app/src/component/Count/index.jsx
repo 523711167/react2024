@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect, useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {countAdd, countMutilple, countSub} from "../../redux/reducer/count";
 
 /**
@@ -7,30 +7,28 @@ import {countAdd, countMutilple, countSub} from "../../redux/reducer/count";
  * @Author pxx
  * @DATA 2023/8/29 18:15
  */
-function CountUI() {
-    let countAdd = useSelector(state => state.countAdd);
-    let countSub = useSelector(state => state.countSub);
-    let countMutilple = useSelector(state => state.countMutilple);
-    let count = useSelector(state => state.count);
+function Count() {
+    let count = useSelector(state => state.counts.count);
+    const dispatch = useDispatch();
 
     let add1 = () => {
-        countAdd(1)
+        dispatch(countAdd(1))
     }
 
     let add2 = () => {
-        countAdd(2)
+        dispatch(countAdd(2))
     }
 
     let sub3 = () => {
-        countSub(3)
+        dispatch(countSub(3))
     }
 
     let sub4 = () => {
-        countSub(1)
+        dispatch(countSub(1))
     }
 
     let multipleAdd = () => {
-        countMutilple(1,2)
+        dispatch(countMutilple(1,2))
     }
 
     return (
@@ -46,17 +44,5 @@ function CountUI() {
     )
 }
 
-function mapStateToProps(state) {
-    return {
-        count: state.counts.count
-    }
-}
-
-const mapDispatchToProps = {
-    countAdd,
-    countSub,
-    countMutilple
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CountUI);
+export default Count;
 
