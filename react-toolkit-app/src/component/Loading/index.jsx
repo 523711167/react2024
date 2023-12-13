@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {fetchLoading} from "../../redux/reducer/loading";
+import {fetchLoading} from "../../redux/slice/loading";
 
 /**
  *
