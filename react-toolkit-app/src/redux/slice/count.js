@@ -19,10 +19,12 @@ const countSlice = createSlice({
             }
         },
         countMutilple: {
+            //创建完成之后执行
             reducer(state, action) {
                 let { type, payload: { add, sub } } = action;
                 state.count = state.count + add - sub
             },
+            //提前创建action中payload值
             prepare(add, sub) {
                 return {
                     payload: { add, sub }
