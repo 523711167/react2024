@@ -10,13 +10,13 @@
 // import Index from "./10-useInRouterContext的使用";
 // import Index from "./11-useNavigationType的使用";
 // import Index from "./12-useOutlet的使用";
-import Index from "./13-useResolvedPath的使用";
+// import Index from "./13-useResolvedPath的使用";
 
 
 function App() {
   return (
     <div className="App">
-        <Index/>
+        {/*<Index/>*/}
     </div>
   );
 }
