@@ -29,6 +29,7 @@ for (let i = 0; i < 46; i++) {
     });
 }
 function Index() {
+    //受控的table表格
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [loading, setLoading] = useState(false);
     const start = () => {
@@ -46,6 +47,27 @@ function Index() {
     const rowSelection = {
         selectedRowKeys,
         onChange: onSelectChange,
+        //左上角选择项配置，可以通过函数自定义
+        selections: [
+            Table.SELECTION_ALL,
+            Table.SELECTION_INVERT,
+            Table.SELECTION_NONE,
+            {
+                key: 'odd',
+                text: 'Select Odd Row',
+                //所有的选择项key
+                onSelect: (changeableRowKeys) => {
+                    let newSelectedRowKeys = [];
+                    newSelectedRowKeys = changeableRowKeys.filter((_, index) => {
+                        if (index % 2 !== 0) {
+                            return false;
+                        }
+                        return true;
+                    });
+                    setSelectedRowKeys(newSelectedRowKeys);
+                },
+            },
+        ],
     };
     const hasSelected = selectedRowKeys.length > 0;
     return (

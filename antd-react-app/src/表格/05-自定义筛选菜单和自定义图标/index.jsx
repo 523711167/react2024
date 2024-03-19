@@ -47,70 +47,77 @@ function Index() {
         setSearchText('');
     };
     const getColumnSearchProps = (dataIndex) => ({
-        filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => (
-            <div
-                style={{
-                    padding: 8,
-                }}
-                onKeyDown={(e) => e.stopPropagation()}
-            >
-                <Input
-                    ref={searchInput}
-                    placeholder={`Search ${dataIndex}`}
-                    value={selectedKeys[0]}
-                    onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
-                    onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+        filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => {
+            console.log('setSelectedKeys =', setSelectedKeys)
+            console.log('selectedKeys =', selectedKeys)
+            console.log('confirm =', confirm.toString())
+            console.log('clearFilters =', clearFilters)
+            console.log('close =', close)
+            return (
+                <div
                     style={{
-                        marginBottom: 8,
-                        display: 'block',
+                        padding: 8,
                     }}
-                />
-                <Space>
-                    <Button
-                        type="primary"
-                        onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
-                        icon={<SearchOutlined />}
-                        size="small"
+                    onKeyDown={(e) => e.stopPropagation()}
+                >
+                    <Input
+                        ref={searchInput}
+                        placeholder={`Search ${dataIndex}`}
+                        value={selectedKeys[0]}
+                        onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+                        onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
                         style={{
-                            width: 90,
+                            marginBottom: 8,
+                            display: 'block',
                         }}
-                    >
-                        Search
-                    </Button>
-                    <Button
-                        onClick={() => clearFilters && handleReset(clearFilters)}
-                        size="small"
-                        style={{
-                            width: 90,
-                        }}
-                    >
-                        Reset
-                    </Button>
-                    <Button
-                        type="link"
-                        size="small"
-                        onClick={() => {
-                            confirm({
-                                closeDropdown: false,
-                            });
-                            setSearchText(selectedKeys[0]);
-                            setSearchedColumn(dataIndex);
-                        }}
-                    >
-                        Filter
-                    </Button>
-                    <Button
-                        type="link"
-                        size="small"
-                        onClick={() => {
-                            close();
-                        }}
-                    >
-                        close
-                    </Button>
-                </Space>
-            </div>
-        ),
+                    />
+                    <Space>
+                        <Button
+                            type="primary"
+                            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+                            icon={<SearchOutlined/>}
+                            size="small"
+                            style={{
+                                width: 90,
+                            }}
+                        >
+                            Search
+                        </Button>
+                        <Button
+                            onClick={() => clearFilters && handleReset(clearFilters)}
+                            size="small"
+                            style={{
+                                width: 90,
+                            }}
+                        >
+                            Reset
+                        </Button>
+                        <Button
+                            type="link"
+                            size="small"
+                            onClick={() => {
+                                confirm({
+                                    closeDropdown: false,
+                                });
+                                setSearchText(selectedKeys[0]);
+                                setSearchedColumn(dataIndex);
+                            }}
+                        >
+                            Filter
+                        </Button>
+                        <Button
+                            type="link"
+                            size="small"
+                            onClick={() => {
+                                close();
+                            }}
+                        >
+                            close
+                        </Button>
+                    </Space>
+                </div>
+            )
+        },
         filterIcon: (filtered) => (
             <SearchOutlined
                 style={{
@@ -164,7 +171,10 @@ function Index() {
             sortDirections: ['descend', 'ascend'],
         },
     ];
-    return <Table columns={columns} dataSource={data} />;
+    //title带页头
+    //Footer带页尾
+    return <Table    title={() => 'Header'}
+                     footer={() => 'Footer'} size={"small"} columns={columns} dataSource={data}/>;
 }
 
 export default Index;

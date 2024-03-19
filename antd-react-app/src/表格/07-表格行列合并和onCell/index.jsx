@@ -18,6 +18,7 @@ const columns = [
     {
         title: 'RowHead',
         dataIndex: 'key',
+        //设置列范围	不太明白
         rowScope: 'row',
     },
     {

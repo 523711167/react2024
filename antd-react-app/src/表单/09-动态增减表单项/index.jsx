@@ -117,7 +117,7 @@ function Index() {
                            <Form.Item>
                                <Button
                                    type="dashed"
-                                   onClick={() => add()}
+                                       onClick={() => add()}
                                    style={{
                                        width: '60%',
                                    }}
