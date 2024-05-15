@@ -1,10 +1,11 @@
 import React from 'react';
 
 /**
- * useMemo 是一个 React Hook，它在每次重新渲染的时候能够缓存计算的结果。
+ * useCallback 用来memo一个函数，使用useMemo也是可以的，但是会导致嵌套函数
  * @Author pxx
- * @DATA 2023/11/25 15:06
+ * @DATA 2024/3/19 20:08
  */
+
 function Index() {
     return (
         <div>

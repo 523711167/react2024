@@ -12,6 +12,7 @@ const MyInput = forwardRef((props, ref) => {
 
 function Index() {
 
+    //父节点可以获取子节点的ref
     const inputRef = useRef(null);
 
     function handleClick() {
