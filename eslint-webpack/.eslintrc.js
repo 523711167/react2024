@@ -1,3 +1,4 @@
+//我现在使用的是8版本,最新的是9版本
 module.exports = {
     // 继承 Eslint 规则
     extends: ["eslint:recommended"],
