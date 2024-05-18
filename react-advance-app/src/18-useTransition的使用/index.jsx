@@ -1,7 +1,9 @@
 import React, {memo, useEffect, useState, useTransition} from 'react';
 
 /**
- *
+ * useTransition 执行两次 观察输出
+ * 初始化 执行一次
+ * 在更新的时候执行两次 原有数据执行一次 在更新完成后新数据在执行一次
  * @Author pxx
  * @DATA 2024/3/13 14:57
  */
@@ -11,14 +13,16 @@ function Index() {
     const [isPending, startTransition] = useTransition();
     const [tab, setTab] = useState('about');
 
-    // console.log('Index() =', isPending)
+    console.log('Index() =', isPending)
+    console.log('tab =', tab)
     //useTransition和useDeferredValue有点不一样
     //在第二次执行的时候触发useEffect
     useEffect(() => {
-        // console.log('useEffect =', isPending)
+        console.log('useEffect =', isPending)
     }, [tab])
 
     function selectTab(nextTab) {
+        //start包裹执行更新的操作
         startTransition(() => {
             setTab(nextTab);
         });
@@ -74,7 +78,7 @@ function AboutTab() {
 
 const PostsTab = memo(function PostsTab() {
     // 打印一次。真正变慢的地方在 SlowPost 内。
-    console.log('[ARTIFICIALLY SLOW] Rendering 500 <SlowPost />');
+    console.log('[ARTIFICIALLY SLOW] Rendering 500 SlowPost ');
 
     let items = [];
     for (let i = 0; i < 500; i++) {
@@ -101,6 +105,9 @@ function SlowPost({ index }) {
 }
 
 function ContactTab() {
+    console.log('我测试自己有没有执行ContactTab');
+    let [num, setNum] = useState(0)
+
     return (
         <>
             <p>
@@ -110,8 +117,19 @@ function ContactTab() {
                 <li>admin@mysite.com</li>
                 <li>+123456789</li>
             </ul>
+            <App num={num}/>
+            <button onClick={() => setNum(++num)}>++++</button>
         </>
     );
+}
+
+// 我想测试在props传递不变的情况下, App函数会执行吗
+function App(props) {
+    console.log('我测试自己有没有执行App');
+    const { num } = props
+    return (
+        <h1>{num}</h1>
+    )
 }
 
 

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Suspense} from 'react';
 import {NavLink, Route, Routes} from "react-router-dom";
 
 
@@ -31,7 +31,11 @@ class Index extends Component {
                     <div className="col-9" style={{border: '1px solid red'}}>
                         <div className="tab-content">
                             <Routes>
-                                <Route path="/about" element={<About/>}/>
+                                <Route path="/about" element={
+                                    <Suspense fallback={111}>
+                                        <About/>
+                                    </Suspense>
+                                }/>
                                 <Route path="/home" element={<Home/>}/>
                             </Routes>
                         </div>
