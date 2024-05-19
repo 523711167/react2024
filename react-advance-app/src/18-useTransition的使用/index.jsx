@@ -24,6 +24,7 @@ function Index() {
     function selectTab(nextTab) {
         //start包裹执行更新的操作
         startTransition(() => {
+            console.log('setTab(nextTab);');
             setTab(nextTab);
         });
     }
