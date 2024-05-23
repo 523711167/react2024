@@ -17,9 +17,9 @@
 // import Index from "./15-forwardRef的使用";
 // import Index from "./16-useImperativeHandle的使用";
 // import Index from "./17-useDeferredValue的使用";
-import Index from "./18-useTransition的使用";
-// import Index from "./19-memo的使用方法";
-// import Index from "./19-memo的使用方法";
+// import Index from "./18-useTransition的使用";
+import Index from "./19-memo的使用方法";
+// import Index from "./20-useCallback的使用";
 
 
 function App() {
