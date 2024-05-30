@@ -5,6 +5,6 @@ import './asserts/css/index.css'
 
 
 document.getElementById('startJs').addEventListener('click', function (ev) {
-    console.log(cat);
+    // console.log(cat);
     document.getElementById('test').classList.add('avatar')
 });
