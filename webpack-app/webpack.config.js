@@ -146,12 +146,13 @@ module.exports = {
         compress: true,
         port: 3000
     },
-    // source-map               外部 单个 提示错误原因,可以直接指向源代码位置，可以看源代码
-// inline-source-map            内敛 单个 提示错误原因,可以直接指向源代码位置，可以看源代码
-    // hidden-source-map        外部 单个 提示错误原因,指向编译后代码位置， 可以看编译后代码
-    // eval-source-map          内部 每个js文件 提示错误原因,可以直接指向源代码位置，可以看源代码
+    // 默认eval                  每个module被eval包裹执行,并且在末尾追加注释//sourceURL定位源文件代码
+    // source-map               单独生成xx.js.map文件,main.js文件中添加sourceMappingURL=xx.js.map定位源文件代码
+// inline-source-map            不会生成xx.js.map文件,但是main.js文件中添加sourceMappingURL=data:application/json;charset=utf-8;base64,文件base64字符串,可以定位源文件代码
+    // hidden-source-map        单独生成xx.js.map文件,但是main.js中没有添加sourceMappingURL=xx.js.map,不可以定位源文件代码
+    // eval-source-map          每个module被eval包裹执行,main.js文件中添加sourceMappingURL=data:application/json;charset=utf-8;base64,文件base64字符串,可以定位源文件代码
     // nosources-source-map     外部 未知   提示错误原因,可以直接指向源代码位置,看不到源代码
-    // cheap-source-map         外部 未知 提示错误原因,可以直接指向源代码位置，可以看源代码
-    // cheap-moudle-source-map  外部 未知 提示错误原因,可以直接指向源代码位置，可以看源代码
+    // cheap-source-map         单独生成xx.js.map文件,main.js文件中添加sourceMappingURL=xx.js.map定位源文件代码,但是xx.js.map内容没有source-map生成的xx.js.map丰富,比如缺少代码在那一列,如果经过babel处理之后的代码,无法定位源文件
+    // cheap-moudle-source-map  单独生成xx.js.map文件,同上,但是经过babel处理的代码还是可以定位源代码文件
     devtool: 'source-map'
 }
