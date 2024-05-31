@@ -18,6 +18,7 @@ module.exports = {
         // webpack打包的文件路径
         path: path.resolve(__dirname, 'dist')
     },
+    watch: true,
     // lorder配置属性
     module: {
         rules: [
