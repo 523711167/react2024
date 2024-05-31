@@ -14,3 +14,5 @@
    配置代码分割也会汇聚成chunk
 3. bundle
    最终打包的文件称为bundle,比如main.js main.map.js为两个bundle,但他们属于同一个chunk
+4. webpack的watch功能
+   只需要在webpack,package,js文件中添加配置即可,执行npx webpack就会监听文件改动

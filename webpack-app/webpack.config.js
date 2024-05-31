@@ -139,6 +139,7 @@ module.exports = {
           new CssMinimizerPlugin(),
         ],
       },
+    watch: true,
     mode: 'production',
     devServer: {
         // webpack打包文件的路径
