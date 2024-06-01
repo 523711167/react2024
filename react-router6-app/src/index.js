@@ -25,7 +25,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //14之前
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
+      {/* basename 属性添加默认头 Link Route都会自动添加*/}
+      <BrowserRouter basename='/app'>
           <App />
       </BrowserRouter>
   </React.StrictMode>
