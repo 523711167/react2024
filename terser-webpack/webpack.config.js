@@ -22,7 +22,9 @@ module.exports = {
     ],
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin()],
+        minimizer: [new TerserPlugin({
+            test: /\.js(\?.*)?$/i,
+        })],
     },
     devtool: 'source-map'
 }
