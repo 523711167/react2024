@@ -23,14 +23,14 @@ class Index extends Component {
         this.setState((preState, preProps) => {
             return { count: preState.count + 1 }
         }, () => {
-
+            console.log(11);
         });
     }
 
     sum2 = () => {
         this.setState({ count: this.state.count + 1 },
             () => {
-
+                console.log(211);
             });
     }
 
