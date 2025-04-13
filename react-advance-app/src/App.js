@@ -1,9 +1,9 @@
-import Index from "./01-react的setState用法";
+// import Index from "./01-react的setState用法";
 // import Index from "./02-react的lazy和suspense的使用";
 // import Index from "./03-useState的使用";
 // import Index from "./04-useEffect的使用";
 // import Index from "./04-useEffect的使用/04-1传递依赖数组";
-// import Index from "./04-useEffect的使用/04-4Effect套娃执行顺序";
+import Index from "./04-useEffect的使用/04-4Effect套娃执行顺序";
 // import Index from "./05-useRef的使用";
 // import Index from "./06-Fragment的使用";
 // import Index from "./07-context的类组件使用";
