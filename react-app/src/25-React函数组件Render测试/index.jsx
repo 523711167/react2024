@@ -5,8 +5,10 @@ import {Fragment, useState} from "react";
  *  1.1 子组件任何属性不依赖父组件
  *  1.2 子组件接受父组件的props
  *      只要父组件的setState发生改变,所有子组件都会执行Render,
- *      发现memo组件可以避免render的执行,如何props不发生改变的情况
- *      祖父组件不会render
+ *      发现memo组件可以避免render的执行,如果props不发生改变的情况
+ *      被memo包裹的组件不会render
+ *
+ * 1. 父组件执行setState(变化的)，子组件都会执行，执行后生成js对象，进行diff运算
  * @constructor
  */
 function App() {
