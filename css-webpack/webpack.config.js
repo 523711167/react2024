@@ -26,10 +26,10 @@ module.exports = {
                 test: /\.css$/i,
                 use: [
                     // 这里还可以配置其他loader优化,比如可以提取css文件
-                    MiniCssExtractPlugin.loader,
+                    // MiniCssExtractPlugin.loader,
 
                     // style-loader的作用: css-loader后的css通过style-loader插入到index.html的style标签里
-                    // "style-loader",
+                    "style-loader",
                     // css-loader的作用: 处理js的import语法 css文件中@import语法,url的语法,sourceMap,
                     // 对比url-loader 可以对文件进行字符串,文件输出位置处理,import导入图片处理
                     "css-loader",
@@ -50,12 +50,12 @@ module.exports = {
         minimizer: [
             // 在 webpack@5 中，你可以使用 `...` 语法来扩展现有的 minimizer（即 `terser-webpack-plugin`），将下一行取消注释
             // `...`,
-            new CssMinimizerPlugin(),
+            // new CssMinimizerPlugin(),
         ],
     },
     plugins: [
         // HtmlWebpackPlugin 必须在第一位
         new HtmlWebpackPlugin(),
-        new MiniCssExtractPlugin(),
+        // new MiniCssExtractPlugin(),
     ],
 }
